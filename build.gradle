@@ -1,0 +1,20 @@
+group 'com.gl'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE")
+//    compile group: 'org.springframework', name: 'spring-com.ws.aop', version: '4.2.0.RELEASE'
+//    compile group: 'org.springframework', name: 'spring-context', version: '4.2.0.RELEASE'
+//    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.0'
+
+}
