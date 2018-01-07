@@ -4,7 +4,7 @@ import com.ws.annotation.RoutingInject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.ws.service.IUserService;
+import com.ws.service.UserService;
 
 /**
  * Created by gl on 2017/9/18.
@@ -14,7 +14,7 @@ public class UserController {
 
 
     @RoutingInject
-    private IUserService userService;
+    private UserService userService;
 
 
     @RequestMapping("/")

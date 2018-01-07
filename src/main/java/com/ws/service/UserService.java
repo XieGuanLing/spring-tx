@@ -6,7 +6,7 @@ import com.ws.bean.UserEntry;
 /**
  * Created by gl on 2017/9/16.
  */
-public interface IUserService {
+public interface UserService {
     void save(UserEntry userEntry);
     @RoutingSwitch("ImplV1")
     void say();
