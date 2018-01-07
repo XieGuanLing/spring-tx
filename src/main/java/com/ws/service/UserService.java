@@ -12,6 +12,7 @@ public interface UserService {
 
     /**
      * 选择哪个版本
+     * todo:程序自动根据不同环境切换, 类似spring的Profile注解
      */
     @RoutingSwitch("ImplV1")
     void say();
