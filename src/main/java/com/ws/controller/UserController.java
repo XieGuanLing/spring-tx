@@ -13,6 +13,9 @@ import com.ws.service.UserService;
 public class UserController {
 
 
+    /**
+     * 某个方法需要动态切换
+     */
     @RoutingInject
     private UserService userService;
 
