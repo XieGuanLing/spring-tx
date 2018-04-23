@@ -1,2 +1,3 @@
 include 'factory-bean-consider'
+include 'bean-post-processor'
 

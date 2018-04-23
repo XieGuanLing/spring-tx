@@ -1,4 +1,4 @@
-package com.ws.platform;
+package com.ws;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -6,7 +6,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 /**
  * Created by gl on 2017/9/18.
  */
-//@EnableAutoConfiguration
 public class Application {
 
     public static void main(String[] args){

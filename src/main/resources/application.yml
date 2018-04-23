@@ -2,7 +2,16 @@
 #    application:
 #        name: cruncher
 #    datasource:
-#        driverClassName: com.mysql.jdbc.Driver
+#        driverClassName: mysql.jdbc.Driver
 #        url: jdbc:mysql://localhost/test
 server:
-    port: 9000
+    port: 9001
+    
+
+zipkin:
+  serviceName: service1
+  url: http://127.0.0.1:9411
+  connectTimeout: 6000
+  readTimeout: 6000
+  flushInterval: 1
+  compressionEnabled: true
