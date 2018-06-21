@@ -1,3 +1,5 @@
 include 'factory-bean-consider'
 include 'bean-post-processor'
+include 'dubbo-sample'
+include 'TransactionSynchronizationManager'
 

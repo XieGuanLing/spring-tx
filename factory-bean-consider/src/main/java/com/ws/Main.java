@@ -1,5 +1,7 @@
 package com.ws;
 
+import com.ws.http.LocalHttpRequest;
+import com.ws.http.dto.QueryUserCommand;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
@@ -15,6 +17,8 @@ public class Main {
         System.out.println(context.getBean("&dateFactoryBean"));
         System.out.println(context.getBean("&stringFactoryBean"));
 
+        LocalHttpRequest localHttpRequest = context.getBean("localHttpClient", LocalHttpRequest.class);
+        System.out.println(localHttpRequest.queryUsers(new QueryUserCommand(0, 10)));
     }
 
 }

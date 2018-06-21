@@ -1,8 +1,14 @@
 package com.ws.controller;
 
 import com.ws.annotation.RoutingInject;
+import com.ws.dto.AppIdCommand;
+import com.ws.dto.QueryUserCommand;
+import com.ws.dto.UserDto;
+import com.ws.lock.LockTestService;
 import com.ws.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,6 +30,17 @@ public class UserController {
      */
     @RoutingInject
     private UserService userService;
+
+    @Autowired
+    private LockTestService lockTestService;
+
+
+    @RequestMapping("/appId")
+    public String appId(@RequestBody AppIdCommand command) {
+        lockTestService.update(command.getAppId());
+        return command.getAppId();
+    }
+
 
 
     @RequestMapping("/")
@@ -47,4 +64,11 @@ public class UserController {
         TimeUnit.MILLISECONDS.sleep(sleep);
         return " [service4 sleep " + sleep+" ms]";
     }
+
+    @RequestMapping("users")
+    public UserDto users(@RequestBody QueryUserCommand command) {
+        System.out.println(command);
+        return new UserDto("gl", 28);
+    }
+
 }

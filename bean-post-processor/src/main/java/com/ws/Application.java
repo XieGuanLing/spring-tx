@@ -1,5 +1,8 @@
 package com.ws;
 
+import com.ws.config.AppConfig;
+import com.ws.lock.LockTestService;
+import com.ws.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
@@ -23,7 +26,13 @@ public class Application {
 //        AnnotationConfigApplicationContext  context = new AnnotationConfigApplicationContext();
 //        context.scan("com.ws");
 //        context.refresh();
-        context.getBean("userServiceImplV1");
+//        context.getBean("userServiceImplV1");
+
+        UserService userService = context.getBean("userServiceImplV1", UserService.class);
+        userService.say();
+
+        LockTestService lockTestService = context.getBean(LockTestService.class);
+        lockTestService.update("98765432");
 
     }
 }

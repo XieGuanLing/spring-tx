@@ -12,4 +12,10 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile("org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE")
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.13'
+    compile 'org.redisson:redisson:3.7.2'
+
+
 }

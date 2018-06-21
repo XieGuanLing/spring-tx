@@ -1,5 +1,7 @@
 package com.ws;
 
+import com.ws.http.HttpFactoryBean;
+import com.ws.http.LocalHttpRequest;
 import org.springframework.context.annotation.Bean;
 
 public class AppConfig {
@@ -21,5 +23,12 @@ public class AppConfig {
         bean.setDate(false);
         return bean;
     }
+
+
+    @Bean(name = "localHttpClient")
+    public HttpFactoryBean createLocalHttpClient(){
+        return new HttpFactoryBean(LocalHttpRequest.class);
+    }
+
 
 }
