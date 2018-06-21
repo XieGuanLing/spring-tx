@@ -70,6 +70,11 @@ public class RoutingBeanPostProcessor implements BeanPostProcessor{
     }
 
 
+    /**
+     * 根据候选者设置对应的实例
+     * @param bean
+     * @param field
+     */
     private void handleRoutingInject(Object bean, Field field){
         //Map<String, Object> candidates = applicationContext.getBeansOfType(field.getType());
         Class type = field.getType();
@@ -79,7 +84,7 @@ public class RoutingBeanPostProcessor implements BeanPostProcessor{
             if(candidates.size()==1){
                 field.set(bean, candidates.values().iterator().next());
             }else if(candidates.size()==2){
-                Object proxy = RoutingProxy.createProxy(type, candidates);
+                Object proxy = RoutingProxySupport.createProxy(type, candidates);
                 if(proxy==null){
                     throw new BeanCreationException(field.getName() + " not suitable candidate");
                 }

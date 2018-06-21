@@ -1,7 +1,6 @@
 package com.ws.autoproxy;
 
 import com.ws.lock.NeedLockAspect;
-import com.ws.lock.NeedLockMethodInterceptor;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -70,17 +69,17 @@ public class AutoProxyCreatorAppConfig {
     }
 
 
-    @Bean
-    public NameMatchMethodPointcutAdvisor nameMatchMethodPointcutAdvisor2(NeedLockMethodInterceptor methodInterceptor){
-        NameMatchMethodPointcutAdvisor nameMatchMethodPointcutAdvisor = new NameMatchMethodPointcutAdvisor();
-        nameMatchMethodPointcutAdvisor.setMappedName("up*");
-        nameMatchMethodPointcutAdvisor.setAdvice(methodInterceptor);
-        return nameMatchMethodPointcutAdvisor;
-    }
+//    @Bean
+//    public NameMatchMethodPointcutAdvisor nameMatchMethodPointcutAdvisor2(NeedLockMethodInterceptor methodInterceptor){
+//        NameMatchMethodPointcutAdvisor nameMatchMethodPointcutAdvisor = new NameMatchMethodPointcutAdvisor();
+//        nameMatchMethodPointcutAdvisor.setMappedName("up*");
+//        nameMatchMethodPointcutAdvisor.setAdvice(methodInterceptor);
+//        return nameMatchMethodPointcutAdvisor;
+//    }
 
     /**
      *A more general and extremely powerful auto proxy creator is DefaultAdvisorAutoProxyCreator.
-     * This will automagically apply eligible advisors in the current context, without the need
+     * This will  apply eligible advisors in the current context, without the need
      * to include specific bean names in the autoproxy advisor's bean definition. It offers the
      * same merit of consistent configuration and avoidance of duplication as BeanNameAutoProxyCreator.
      *
