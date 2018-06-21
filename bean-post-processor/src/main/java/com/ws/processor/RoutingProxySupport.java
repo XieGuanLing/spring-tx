@@ -1,11 +1,7 @@
 package com.ws.processor;
 
-import com.ws.annotation.RoutingSwitch;
-import org.aopalliance.intercept.MethodInterceptor;
-import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.framework.ProxyFactory;
 
-import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
@@ -13,6 +9,13 @@ import java.util.Map;
  */
 public class RoutingProxySupport {
 
+    /**
+     * ProxyFactory是动态代理的核心，
+     * @see org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator#createProxy
+     * @param targetClass
+     * @param candidates
+     * @return
+     */
     public static Object createProxy(Class targetClass, Map<String, Object> candidates){
         ProxyFactory proxyFactory = new ProxyFactory();
         proxyFactory.setInterfaces(targetClass);
