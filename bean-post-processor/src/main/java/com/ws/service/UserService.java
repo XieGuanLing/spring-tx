@@ -2,13 +2,17 @@ package com.ws.service;
 
 import com.ws.annotation.RoutingSwitch;
 import com.ws.bean.UserEntry;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by gl on 2017/9/16.
  */
+@Validated
 public interface UserService {
 
-    void save(UserEntry userEntry);
+    void save(@NotNull UserEntry userEntry);
 
     /**
      * 选择哪个版本

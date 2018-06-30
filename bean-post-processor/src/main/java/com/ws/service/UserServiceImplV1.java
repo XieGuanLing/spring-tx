@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImplV1 implements UserService {
     @Override
-    public void save(UserEntry userEntry) {
-        System.out.println("v1");
+    public void save( UserEntry userEntry) {
+        System.out.println("v2");
     }
 
     @Override

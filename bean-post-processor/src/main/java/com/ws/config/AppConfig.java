@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -70,6 +71,11 @@ public class AppConfig {
         config.useSingleServer()
                 .setAddress("http://127.0.0.1:6379");
         return Redisson.create(config);
+    }
+
+    @Bean
+    public MethodValidationPostProcessor methodValidationPostProcessor() {
+        return new MethodValidationPostProcessor();
     }
 
 //    @Bean
